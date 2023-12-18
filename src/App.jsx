@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./App.scss";
+import "./App.css";
 const apiKey = import.meta.env.VITE_API_KEY;
 import MovieCards from "./Components/MovieCards";
 import SearchBar from "./Components/SearchBar";
@@ -25,6 +25,9 @@ function App() {
 
   return (
     <>
+
+ <SearchBar onSearch={handleSearch} />
+
       <h1>popular movies and most rated</h1>
       {movies.map((movie, i) => (//iterazione sullo stato movies
         <MovieCards
@@ -36,7 +39,7 @@ function App() {
           //movie.title valori che fanno parte dell'oggetto api
         />
       ))}
-      <SearchBar onSearch={handleSearch} />
+     
     </>
   );
 }
